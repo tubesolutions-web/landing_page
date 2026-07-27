@@ -1,9 +1,22 @@
-# Hidden Cleaning Hacks — Landing Page
+# landing_page
+
+Multiple standalone landing pages, each in its own folder. GitHub Pages deploys the
+whole repo root via `.github/workflows/static.yml` on push to `main`; the root
+`index.html` redirects to the live site.
+
+## Structure
+
+| Folder | What it is |
+|---|---|
+| `hidden-home-secrets/` | **Live site** (`hiddenhomesecrets.com`) — "Hidden Cleaning Hacks" ebook landing page |
+| `old-bundle/` | Archived 3-tier bundle landing page, kept for reference |
+| `philosophy-of-marketing/` | Clone of philosophyofmarketing.com (home, free guide, course, library) |
+
+## Hidden Home Secrets — Landing Page
 
 A single-file, conversion-optimized sales landing page for a single ebook.
 Pure HTML + inline CSS + vanilla JS — no build step, no framework, no dependencies.
-Open `index.html` in a browser, or drop it on any static host (currently deployed to
-GitHub Pages via `.github/workflows/static.yml`, on push to `main`).
+Open `hidden-home-secrets/index.html` in a browser, or drop the folder on any static host.
 
 ## Design system
 
@@ -41,17 +54,17 @@ All colors live in the CSS `:root` block at the top of `index.html` — edit the
 
 ## Customize
 
-1. **Checkout link** — set `EBOOK_LINK` near the bottom of `index.html` to your real
-   checkout URL (Hotmart, Stripe, Gumroad, etc.). Until it's set, every CTA points to `#`
-   and won't take visitors anywhere.
-2. **Cover art** — the hero cover is inline SVG (dark green gradient, title, stats). A
-   standalone copy lives at `images/cover.svg` if you want it as a separate asset. Edit
-   the text/colors directly in the SVG markup (appears in both places) to change it.
-3. **Price / title** — search `index.html` for `$36` and `Hidden Cleaning Hacks` to
-   rename or reprice; both appear in several places (hero, buy bars, offer card, FAQ).
+1. **Checkout link** — set `EBOOK_LINK` near the bottom of `hidden-home-secrets/index.html`
+   to your real checkout URL (Hotmart, Stripe, Gumroad, etc.). Until it's set, every CTA
+   points to `#` and won't take visitors anywhere.
+2. **Cover art** — `hidden-home-secrets/images/cover.png` is the designed cover asset.
+3. **Price / title** — search `hidden-home-secrets/index.html` for `$36` and
+   `Hidden Cleaning Hacks` to rename or reprice; both appear in several places (hero, buy
+   bars, offer card, FAQ).
 4. **Analytics** — GA4 is wired in (`G-V1FE4DV5WL`), including CTA click tracking by
    placement (hero / sticky buy bar / offer card / close).
-5. **Domain** — `CNAME` points this repo at `hiddenhomesecrets.com` via GitHub Pages.
+5. **Domain** — `CNAME` points this repo at `hiddenhomesecrets.com` via GitHub Pages,
+   which serves `hidden-home-secrets/` through the root redirect.
 
 ## Honesty note
 
