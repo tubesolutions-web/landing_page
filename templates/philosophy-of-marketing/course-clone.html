@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Course — The Philosophy of Marketing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="https://cdn.podia.com/assets/graphics/favicon-default-943fc2dc6ea05b3cb8bb8844b30388e95f0e5059e99350e845bb0c3a63bd1cad.png">
+<link rel="stylesheet" href="philosophy-shared.css">
+<style>
+  .section-dark2 { background: #171b42; color: var(--cream); }
+  .section-dark2 h1, .section-dark2 h2, .section-dark2 h3, .section-dark2 h4 { color: var(--cream); }
+  .section-dark2 p { color: #ffffff; }
+  .section-purple { background: var(--purple); color: var(--cream); }
+  .section-purple h1, .section-purple h2, .section-purple h3, .section-purple h4 { color: var(--cream); }
+  .section-navy p { color: #ffffff; }
+
+  .mark-green {
+    background: #C7F9B0;
+    color: #1D5702;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+  .mark-blue {
+    background: #BEDFFF;
+    color: #1B4976;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+  .step.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 4px 16px rgba(16,19,47,0.06);
+  }
+  .step.card p { color: rgba(16,19,47,0.75) !important; }
+
+  .checklist { list-style: none; padding: 0; margin: 24px 0; text-align: left; display: inline-block; }
+  .checklist li { margin-bottom: 10px; font-weight: 700; color: var(--cream); }
+  .checklist li .mark-green { margin-right: 8px; }
+
+  .price-block { margin: 24px 0; }
+  .price-block .price-now { font-size: 1.6rem; font-weight: 800; color: var(--cream); }
+  .price-block .price-future { font-size: 0.9rem; color: rgba(247,245,239,0.65); margin-left: 10px; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    text-align: center;
+  }
+  .stat .num { font-size: 1.75rem; font-weight: 800; color: var(--navy); margin: 0; }
+  .stat .label { font-size: 1rem; color: #171b42; }
+  .stats-section { padding: 24px 0; }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+  .step .step-num { margin-bottom: 10px; }
+  .step h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .step p { font-size: 0.9rem; margin: 0; }
+  .section-cream .step p { color: rgba(16,19,47,0.75); }
+  .section-dark2 .step p { color: #ffffff; }
+
+  .case-study-card { background: #fff; border-radius: 8px; padding: 28px; box-shadow: 0 4px 16px rgba(16,19,47,0.06); color: var(--navy); }
+  .case-study-card h3, .case-study-card p, .case-study-card li { color: var(--navy); }
+  .case-study-card .kicker { margin-bottom: 10px; }
+  .case-study-card ul { margin: 12px 0 0; padding-left: 18px; font-size: 0.9rem; color: rgba(16,19,47,0.8); }
+
+  .receive-list { list-style: none; padding: 0; max-width: 480px; margin: 0 auto; text-align: left; }
+  .receive-list li { margin-bottom: 10px; }
+
+  .testimonial .avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; margin-bottom: 14px; }
+  .section-navy .testimonial p,
+  .section-navy .testimonial .author { color: var(--navy); }
+
+  .hero-left { max-width: 760px; }
+  .hero-left h1 { margin: 14px 0 12px; }
+  .hero-left > p { margin: 0 0 18px; }
+  .hero-left .checklist { margin: 0 0 18px; display: block; }
+  .hero-left .checklist li { margin-bottom: 8px; }
+  .hero-left .price-block { margin: 0 0 10px; }
+  .hero-left h3 { margin: 0 0 12px; }
+  .inline-form { justify-content: flex-start; max-width: none; margin: 0; }
+  .inline-form input { flex: 0 1 190px; }
+  .inline-form button { flex: 0 0 auto; }
+  section.section-navy:first-of-type { padding: 40px 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="index.html">
+      <img src="https://www.philosophyofmarketing.com/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoiY2k0NWZnbmJ2Y2szbWhqaDY4aDM0cHJlcnE3eCIsImRvbWFpbiI6Ind3dy5waGlsb3NvcGh5b2ZtYXJrZXRpbmcuY29tIn0.i_t7Of4xYfAztdy1pxk2EqzuHgAxoBxEtuHKgy5fG8I" alt="The Philosophy of Marketing">
+      <span class="site-name-text">The Philosophy<br>of Marketing</span>
+    </a>
+    <nav class="site-nav">
+      <a href="https://www.youtube.com/channel/UCBZ_L7SDvjbosGBav4Z5PRw" target="_blank" rel="noopener">Youtube Channel</a>
+      <a href="guide-clone.html">Free Marketing Guide</a>
+      <a href="course-clone.html" class="active">Course</a>
+      <a href="library-clone.html">Library</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero (navy) -->
+<section class="section-navy">
+  <div class="wrap hero-left">
+    <span class="mark-green">Founding cohort · Limited to 30 members</span>
+    <h1>Stop competing on price. Give customers a reason to choose you.</h1>
+    <p>A practical positioning course that helps you uncover what makes your business different, build a clear reason customers should choose you, and create a marketing plan you can actually execute.</p>
+
+    <ul class="checklist">
+      <li><span class="mark-green">✓</span>Decide who your business should target</li>
+      <li><span class="mark-green">✓</span>Create a position customers can remember</li>
+      <li><span class="mark-green">✓</span>Know what to say and where to reach them</li>
+      <li><span class="mark-green">✓</span>100% Money Back Guarantee</li>
+    </ul>
+
+    <div class="price-block">
+      <span class="price-now">$99 launch price</span>
+      <span class="price-future">future price $199</span>
+    </div>
+
+    <h3 style="color:var(--cream);">Be first when enrollment opens.</h3>
+    <form class="signup-form inline-form" action="#" method="post">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <button type="submit">Join the founding waitlist</button>
+    </form>
+  </div>
+</section>
+
+<!-- Stats (white) -->
+<section class="section-white stats-section">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num">4</div><div class="label">Live Workshops</div></div>
+    <div class="stat"><div class="num">30</div><div class="label">Founding Places</div></div>
+    <div class="stat"><div class="num">90K+</div><div class="label">YouTube Audience Built</div></div>
+    <div class="stat"><div class="num">1</div><div class="label">Complete Strategy</div></div>
+  </div>
+</section>
+
+<!-- Testimonials (navy) -->
+<section class="section-navy">
+  <div class="wrap">
+    <div class="section-head text-center">
+      <h2>Real Feedback from Real Founders</h2>
+      <p>I've worked with founders, creators, and marketers across industries to help them build brands that own their category. Here's what a few had to say.</p>
+    </div>
+    <div class="grid">
+      <div class="testimonial">
+        <img class="avatar" src="https://www.philosophyofmarketing.com/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoiY3d0bHF6d2gzaHJpbzNiZDRwanRpOGJnZzV3MyIsImRvbWFpbiI6Ind3dy5waGlsb3NvcGh5b2ZtYXJrZXRpbmcuY29tIn0.-NJChBPGOyijAHnUqSZL769aIfL1UaTqnrbYh6-27Kg" alt="Levi Hague">
+        <p style="font-weight:700; font-style:normal;">"Highly recommend to anyone in business!"</p>
+        <p>At times, you really can get sucked into your business and not see outside the box. Thankfully, Matthew could — and gave valuable insight into what I could do, change, and add to improve things. The email follow-up was a mass of insightful information.</p>
+        <div class="author">Levi Hague — Founder Of Living Forever Memories</div>
+      </div>
+      <div class="testimonial">
+        <img class="avatar" src="https://www.philosophyofmarketing.com/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoiNXRmOTNqdWU3ZWV2MGJyMW5icDlqeDkxYmQ2cCIsImRvbWFpbiI6Ind3dy5waGlsb3NvcGh5b2ZtYXJrZXRpbmcuY29tIn0.RQzKyN7cutPp_aQKezinnMC5kULUdJfLRhJQ0NlsSlg" alt="James Caine">
+        <p style="font-weight:700; font-style:normal;">"Extremely helpful and insightful."</p>
+        <p>Matthew's recommendation of blue ocean strategy — it's a no-brainer when you think about it. He helped me see exactly how to position my product before launch and find product-market fit. If you're a growing brand with momentum, Matthew will propel you to the next level.</p>
+        <div class="author">James Caine — Founder Of Secluded</div>
+      </div>
+      <div class="testimonial">
+        <img class="avatar" src="https://www.philosophyofmarketing.com/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoiYWVsYjE0ZmUzNmRmMjBoeXM0bHpqeHpwZzVvNCIsImRvbWFpbiI6Ind3dy5waGlsb3NvcGh5b2ZtYXJrZXRpbmcuY29tIn0.F2nKe6zhb3deE7p7glFy683N3DrzjITygxwDrT0n17k" alt="Luke O'Herlihy">
+        <p style="font-weight:700; font-style:normal;">"Couldn't have found a better consult"</p>
+        <p>It was great to get a full break down of everything I'm currently doing, what's going well, what needs to be improved, and an exact road map of what to do next to grow my brand. It was great to be able to have all of my initial questions answered on the call, and then an extremely detailed document built out that covered exactly what I need to do next to grow.</p>
+        <div class="author">Luke O'Herlihy — Precision Leads</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strategy before tactics (cream) -->
+<section class="section-cream">
+  <div class="wrap">
+    <div class="section-head text-center">
+      <span class="mark-blue">Strategy before tactics</span>
+      <h2 style="margin-top:16px;">Most marketing problems begin before the advertisement.</h2>
+      <p>More content, another social platform, or a larger advertising budget cannot fix a business that is unclear about who it serves and why customers should choose it.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step card"><span class="step-num mark-blue">01</span><h3>Who?</h3><p>Choose the customer and problem worth pursuing.</p></div>
+      <div class="step card"><span class="step-num mark-blue">02</span><h3>Why you?</h3><p>Create a position customers can understand and remember.</p></div>
+      <div class="step card"><span class="step-num mark-blue">03</span><h3>Where?</h3><p>Reach buyers through channels that match their behavior.</p></div>
+      <div class="step card"><span class="step-num mark-blue">04</span><h3>Then what?</h3><p>Turn attention into leads, customers, and measurable growth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- What you'll leave with (dark2) -->
+<section class="section-dark2">
+  <div class="wrap">
+    <div class="section-head text-center">
+      <span class="mark-green">What you'll leave with</span>
+      <h2 style="margin-top:16px;">Not twenty lessons to watch. A marketing strategy to use.</h2>
+      <p>Every part of the course ends with a decision or finished asset for your business.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step"><span class="step-num mark-green">01</span><h3>The right customer</h3><p>Choose the market and customer problem worth building your strategy around.</p></div>
+      <div class="step"><span class="step-num mark-green">02</span><h3>A reason to choose you</h3><p>Create a clear position and customer-facing USP that separates you from alternatives.</p></div>
+      <div class="step"><span class="step-num mark-green">03</span><h3>A message people understand</h3><p>Turn your position into a headline, value proposition, proof points, and call to action.</p></div>
+      <div class="step"><span class="step-num mark-green">04</span><h3>The right way to reach them</h3><p>Select the channels that fit how your customers actually discover and buy.</p></div>
+      <div class="step"><span class="step-num mark-green">05</span><h3>A 30-day plan</h3><p>Leave with a prioritized marketing plan instead of another folder of unfinished ideas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Built from real decisions (cream) -->
+<section class="section-cream">
+  <div class="wrap">
+    <div class="section-head text-center">
+      <span class="mark-blue">Built from real decisions</span>
+      <h2 style="margin-top:16px;">Marketing principles applied outside the classroom.</h2>
+      <p>The course combines enduring marketing ideas with the choices, experiments, mistakes, and results behind two real businesses.</p>
+    </div>
+    <div class="grid">
+      <div class="case-study-card">
+        <div class="kicker mark-blue">Service business case study</div>
+        <h3>Tradesman Digital Marketing</h3>
+        <p>How choosing a defined market, clarifying the offer, and building around a specific customer made the business easier to sell and grow.</p>
+        <ul>
+          <li>Market selection and specialization</li>
+          <li>Offer, pricing, and client acquisition</li>
+          <li>What worked—and what had to change</li>
+        </ul>
+      </div>
+      <div class="case-study-card">
+        <div class="kicker mark-blue">Media brand case study</div>
+        <h3>The Philosophy of Marketing</h3>
+        <p>How an underserved position, recognizable packaging, and relentless testing built a focused audience around marketing history.</p>
+        <ul>
+          <li>Positioning a new content brand</li>
+          <li>Titles, thumbnails, and market feedback</li>
+          <li>Turning attention into a durable brand</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Founding cohort schedule (navy) -->
+<section class="section-navy">
+  <div class="wrap">
+    <div class="section-head text-center">
+      <span class="mark-green">The founding cohort</span>
+      <h2 style="margin-top:16px;">Build your strategy while helping shape the final course.</h2>
+      <p>The first version will be taught live over four weeks. Your questions, completed work, and feedback will help improve the finished self-paced program.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step"><span class="step-num mark-green">Week 1</span><h3>Diagnose the problem</h3><p>Find out whether you have a market, positioning, awareness, or conversion problem.</p></div>
+      <div class="step"><span class="step-num mark-green">Week 2</span><h3>Build your position</h3><p>Identify the idea you want to own and turn it into a credible USP.</p></div>
+      <div class="step"><span class="step-num mark-green">Week 3</span><h3>Create the message</h3><p>Explain why customers should choose you and decide where to reach them.</p></div>
+      <div class="step"><span class="step-num mark-green">Week 4</span><h3>Put it into action</h3><p>Improve conversion and build a practical 30-day marketing plan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Founding members receive (white) -->
+<section class="section-white text-center">
+  <div class="wrap">
+    <span class="mark-blue">Founding members receive</span>
+    <h2 style="margin-top:16px;">Everything needed to put the strategy into practice.</h2>
+    <ul class="receive-list">
+      <li>✓ Four live implementation workshops</li>
+      <li>✓ Practical workbooks and templates</li>
+      <li>✓ Live Q&amp;A and selected business hot seats</li>
+      <li>✓ Recordings of every workshop</li>
+      <li>✓ The finished $199 course at no extra cost</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ (cream) -->
+<section class="section-cream">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head text-center">
+      <span class="mark-green">Questions, answered</span>
+      <h2 style="margin-top:16px;">Before you join the waitlist.</h2>
+    </div>
+    <details class="faq-item" open>
+      <summary>Who is this course for?</summary>
+      <p><span class="placeholder-note">answer not provided yet</span></p>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need an established business?</summary>
+      <p><span class="placeholder-note">answer not provided yet</span></p>
+    </details>
+    <details class="faq-item">
+      <summary>How is this different from the YouTube channel?</summary>
+      <p><span class="placeholder-note">answer not provided yet</span></p>
+    </details>
+    <details class="faq-item">
+      <summary>What if I cannot attend a live workshop?</summary>
+      <p><span class="placeholder-note">answer not provided yet</span></p>
+    </details>
+    <details class="faq-item">
+      <summary>Why is the founding price $99?</summary>
+      <p><span class="placeholder-note">answer not provided yet</span></p>
+    </details>
+  </div>
+</section>
+
+<!-- Final CTA (purple) -->
+<section class="section-purple text-center">
+  <div class="wrap section-head">
+    <span class="mark-green">Only 30 founding places</span>
+    <h2 style="margin-top:16px;">Stop being compared only by price.</h2>
+    <p>Join the waitlist for priority access to the $99 founding cohort.</p>
+    <form class="signup-form" style="justify-content:center; max-width:480px; margin:24px auto 0;" action="#" method="post">
+      <input type="email" name="email" placeholder="Email" required>
+      <button type="submit">Join the founding waitlist</button>
+    </form>
+    <p class="form-subtext" style="color:rgba(247,245,239,0.8);">By signing up, you agree to receive email updates.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Marketing history. Practical strategy. Better decisions.</p>
+    <div class="footer-links">
+      <a href="https://www.philosophyofmarketing.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="https://www.philosophyofmarketing.com/terms" target="_blank" rel="noopener">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
