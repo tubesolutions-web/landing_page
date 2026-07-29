@@ -26,7 +26,7 @@ Your bathroom has a recurring problem, and the cleaning aisle has a recurring pr
 
 The ring at your waterline is not dirt. The smell that comes back after you have scrubbed everything is not coming from the bowl. The carpet stain that reappeared a week later never actually left. Once you know what is really going on underneath each of those, the fix is usually something that costs about a dollar and is already in your house.
 
-This is the handbook version of the Hidden Home Secrets channel — every method in one place, with the detail a video cannot carry.
+This is every method I have, in one place, with the detail a video cannot carry.
 
 WHAT YOU GET
 
@@ -82,8 +82,8 @@ Work down this list in the Hotmart product editor.
 - [ ] **Payment methods:** enable the ones shown on the landing page
 - [ ] **Support email:** hello@hiddenhomesecrets.com
 - [ ] **Copy the checkout URL** into `PAYMENT_URL` at the top of the script in
-      `sales-page.html` — until that is filled in, both buy buttons are inactive
-      and show a warning
+      `index.html` — until that is filled in, both buy buttons look normal but
+      do nothing, and the reason is logged to the browser console only
 
 ---
 
@@ -95,7 +95,8 @@ offered at that figure. If it has never sold at $100, remove the strikethrough
 and the "SAVE $50 TODAY" line — inventing a former price is a regulated
 practice in both the US and the EU.
 
-**The countdown.** `PROMO_END` in the page script is a placeholder date. Set it
-to a deadline you will actually honour. Once it passes, the bar reads "PROMO HAS
-ENDED" above a live buy button, and repeatedly pushing the date forward is
-visible to returning visitors.
+**The countdown.** `PROMO_END` is set to `"monthly"`, so the bar counts down to
+the last second of each month and then rolls into the next one. That claims the
+price changes at month end. If the Hotmart price never actually moves, the
+countdown is decoration, and returning visitors will notice. Either vary the
+price month to month, or set `PROMO_END = null` to hide the bar entirely.
