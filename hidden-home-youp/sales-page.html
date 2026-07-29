@@ -545,11 +545,16 @@ var PAYMENT_URL = "";   // e.g. "https://pay.hotmart.com/XXXXXXXXX"
 
 /* ============================================================
    PROMO DEADLINE  ←  EDIT THIS ONE LINE
-   A single fixed instant, identical for every visitor.
-   null  -> hides the entire top bar.
-   past  -> bar stays, label becomes "PROMO HAS ENDED".
+
+   "monthly"      -> counts down to the last second of the current month
+                     in UTC, then rolls straight into the next month.
+                     Still ONE deadline shared by every visitor — it is not
+                     a per-visitor timer that restarts on page load.
+   "2026-08-31T23:59:59" -> one fixed deadline. Shows "PROMO HAS ENDED"
+                     once it passes, and stays that way.
+   null           -> hides the entire top bar.
    ============================================================ */
-var PROMO_END = "2026-08-31T23:59:59";   // PLACEHOLDER — set your real deadline
+var PROMO_END = "monthly";
 
 (function () {
   /* ---- buy buttons ---- */
@@ -559,28 +564,36 @@ var PROMO_END = "2026-08-31T23:59:59";   // PLACEHOLDER — set your real deadli
       b.setAttribute("href", PAYMENT_URL);
       return;
     }
-    /* No checkout URL yet. Keep the button at full brightness so the page
-       previews correctly, but block the click and say why — loudly enough
-       that this cannot reach production unnoticed. */
+    /* No checkout URL yet. The button still looks live so the page previews
+       correctly, but the click is blocked rather than sending anyone to a
+       dead "#" link. The warning goes to the console only. */
     b.setAttribute("aria-disabled", "true");
     b.addEventListener("click", function (e) {
       e.preventDefault();
       console.warn("[sales-page] PAYMENT_URL is not set — edit it at the top of the script.");
     });
-    var warn = document.createElement("div");
-    warn.textContent = "⚠ PAYMENT_URL not set — this button is inactive";
-    warn.style.cssText = "margin-top:10px;font-family:'IBM Plex Mono',monospace;" +
-      "font-size:11px;letter-spacing:.08em;color:#1a1200;background:#e85555;" +
-      "padding:6px 10px;border-radius:5px;font-weight:700;text-transform:uppercase;";
-    b.insertAdjacentElement("afterend", warn);
   });
 
   /* ---- countdown ---- */
   var bar = document.getElementById("topbar");
   if (PROMO_END === null) { bar.style.display = "none"; return; }
 
-  var end = new Date(PROMO_END).getTime();
-  if (isNaN(end)) { bar.style.display = "none"; return; }
+  var MONTHLY = PROMO_END === "monthly";
+
+  /* Last second of the current month, in UTC so that every visitor on the
+     planet is counting down to the same instant. */
+  function endOfMonth() {
+    var n = new Date();
+    return Date.UTC(n.getUTCFullYear(), n.getUTCMonth() + 1, 1) - 1000;
+  }
+
+  var end;
+  if (MONTHLY) {
+    end = endOfMonth();
+  } else {
+    end = new Date(PROMO_END).getTime();
+    if (isNaN(end)) { bar.style.display = "none"; return; }
+  }
 
   var label = document.getElementById("cd-label"),
       clock = document.getElementById("cd-clock"),
@@ -588,16 +601,23 @@ var PROMO_END = "2026-08-31T23:59:59";   // PLACEHOLDER — set your real deadli
       cM = document.getElementById("cd-m"), cS = document.getElementById("cd-s"),
       timer;
 
+  if (MONTHLY) label.textContent = "This month's price ends in";
+
   function pad(n) { return n < 10 ? "0" + n : "" + n; }
   function cell(el, v, unit) { el.innerHTML = pad(v) + "<s>" + unit + "</s>"; }
 
   function tick() {
     var diff = end - Date.now();
     if (diff <= 0) {
-      clearInterval(timer);
-      label.textContent = "Promo has ended";
-      clock.style.display = "none";
-      return;
+      if (MONTHLY) {
+        end = endOfMonth();          // roll into the new month, keep counting
+        diff = end - Date.now();
+      } else {
+        clearInterval(timer);
+        label.textContent = "Promo has ended";
+        clock.style.display = "none";
+        return;
+      }
     }
     var s = Math.floor(diff / 1000),
         d = Math.floor(s / 86400),
