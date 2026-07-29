@@ -5,3 +5,6 @@ node_modules/
 .venv-ebook/
 __pycache__/
 *.pyc
+
+# the paid product must never be published by GitHub Pages
+build/*.pdf
